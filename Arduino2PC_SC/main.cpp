@@ -72,9 +72,9 @@ int main()
 		}*/
 
 		/*
-		printf("%c \n", output[0]); 
-		printf("%c \n", output[1]);	//bit giusti
-		printf("%c \n", output[2]);*/
+		printf("%c num 1 \n", output[0]); 
+		printf("%c num 2\n", output[1]);	//bit giusti
+		printf("%c num 3\n", output[2]);*/
 		
 		
 		tripl[0] = (output[0] - 48) * 100;
@@ -84,7 +84,7 @@ int main()
 
 		printf("%d \n", x);
 
-		//printf("%d \n", x);
+		printf("%d \n", x);
 
 		//printf("%d \n", tripl[i-1]);
 		//printf("%d \n", i);
@@ -95,9 +95,9 @@ int main()
 		
 		//printf("%d", MAX_DATA_LENGTH);
 		//printf("\n");
-		Sleep(500);
+		Sleep(100);
 		//x = output - "0";
-		//SetCursorPos(x, 100);
+		SetCursorPos(x, 100);
 		//output[] = "0";
 
 		//delete [] charArray;

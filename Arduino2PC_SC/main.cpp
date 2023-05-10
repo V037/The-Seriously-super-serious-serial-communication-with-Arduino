@@ -28,13 +28,16 @@ char incomingData[MAX_DATA_LENGTH];
 char *port = "\\\\.\\COM4";
 int tripl[3] = { };
 int x = 0;
+char susa;
+POINT xypos;
 
 int main()
 {
+	Sleep(2000);
 	SerialPort arduino(port);
 	if(arduino.isConnected()){
 		cout<<"Connection made"<<endl<<endl;
-		
+		GetCursorPos(&xypos);
 	}
 	else{
 		cout<<"Error in port name"<<endl<<endl;
@@ -59,20 +62,42 @@ int main()
 			printf("%c", output[i]);
 		}*/
 
+		susa = '0';
+		
 		/*
 		printf("%c num 1 \n", output[0]); 
 		printf("%c num 2\n", output[1]);	//bit giusti
-		printf("%c num 3\n", output[2]);*/
+		printf("%c num 3\n", output[2]);
+		printf("%c num 4\n", output[3]);
+		printf("%c num 5\n", output[4]);
+		printf("%c num 6 \n", output[5]);
+		printf("%c num 7\n", output[6]);	//bit giusti
+		printf("%c num 8\n", output[7]);
+		printf("%c num 9\n", output[8]);
+		printf("%c num 10\n", output[9]);*/
 		
-		
+		for (int i = 0; susa == '0'; i = i + 1)
+		{
+			if(output[i] == '/' && output[i+1] == '.')
+			{
+				tripl[0] = (output[i+2] - 48) * 100;
+				tripl[1] = (output[i+3] - 48) * 10;
+				tripl[2] = output[i+4] - 48;
+				x = tripl[0] + tripl[1] + tripl[2];
+				printf("%d \n", i);
+				printf("%d \n", x);
+				susa = '1';
+			}
+		}
+		/*
 		tripl[0] = (output[0] - 48) * 100;
 		tripl[1] = (output[1] - 48)* 10;
 		tripl[2] = output[2] - 48;
-		x = tripl[0] + tripl[1] + tripl[2];
+		x = tripl[0] + tripl[1] + tripl[2];*/
 
-		printf("%d \n", x);
 
-		printf("%d \n", x);
+
+		//printf("%d \n", x);
 
 		//printf("%d \n", tripl[i-1]);
 		//printf("%d \n", i);
@@ -83,9 +108,11 @@ int main()
 		
 		//printf("%d", MAX_DATA_LENGTH);
 		//printf("\n");
-		Sleep(100);
+		Sleep(10);
+
 		//x = output - "0";
-		SetCursorPos(x, 100);
+		
+		SetCursorPos(xypos.x+x, xypos.y);
 		//output[] = "0";
 
 		//delete [] charArray;

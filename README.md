@@ -1,8 +1,8 @@
-#fuck this
-Learn to fuck Arduino using using your software designed in C++ in your electronic projects.
+# this
+Learn to Arduino using using your software designed in C++ in your electronic projects.
 
 ### DISCLAMER:
-THE FUCK
+THE 
 <hr>
 CLICK ON PICTURE TO WATCH THIS TUTORIAL BEFORE DOING ANYTHING -- HIGHLY RECOMMENDED
 <hr>
